@@ -15,9 +15,11 @@
   "author": "Lucas Barbosa <barbosa.lucash@gmail.com> (https://github.com/lucabarbosa)",
   "license": "MIT",
   "devDependencies": {
+    "chai": "^4.1.2",
     "eslint": "^4.18.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
-    "husky": "^0.14.3"
+    "husky": "^0.14.3",
+    "mocha": "^5.0.1"
   }
 }
