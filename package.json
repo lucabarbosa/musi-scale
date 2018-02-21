@@ -6,12 +6,18 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint src/*.js"
   },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn run lint"
+    }
+  },
   "repository": "https://github.com/lucabarbosa/musi-scale.git",
   "author": "Lucas Barbosa <barbosa.lucash@gmail.com> (https://github.com/lucabarbosa)",
   "license": "MIT",
   "devDependencies": {
     "eslint": "^4.18.1",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.8.0"
+    "eslint-plugin-import": "^2.8.0",
+    "husky": "^0.14.3"
   }
 }
