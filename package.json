@@ -4,11 +4,13 @@
   "description": "Command-line user interface (CLI) to get notes from a music scale",
   "main": "src/index.js",
   "scripts": {
-    "lint": "./node_modules/.bin/eslint src/*.js"
+    "lint": "./node_modules/.bin/eslint src/*.js",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js",
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --watch"
   },
   "husky": {
     "hooks": {
-      "pre-push": "yarn run lint"
+      "pre-push": "yarn run lint && yarn run test"
     }
   },
   "repository": "https://github.com/lucabarbosa/musi-scale.git",
