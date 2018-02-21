@@ -1,0 +1,9 @@
+{
+  "name": "musi-scale",
+  "version": "1.0.0",
+  "description": "Command-line user interface (CLI) to get notes from a music scale",
+  "main": "src/index.js",
+  "repository": "https://github.com/lucabarbosa/musi-scale.git",
+  "author": "Lucas Barbosa <barbosa.lucash@gmail.com> (https://github.com/lucabarbosa)",
+  "license": "MIT"
+}
