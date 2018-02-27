@@ -6,6 +6,9 @@ import {
   tonicIndexOnChromaticScale,
 } from '../../src/utils/conversors.utils';
 import { buildScale } from '../../src/utils/buildScale.utils';
+import { buildProgression } from '../../src/utils/buildProgression.utils';
+import ChordProgression from '../../src/models/ChordProgression';
+import Scale from '../../src/models/Scale';
 
 describe('Utils', () => {
 
@@ -61,12 +64,29 @@ describe('Utils', () => {
   describe('Build Scale Utils', () => {
 
     it('should throw when scale not exists', () => {
-      expect(buildScale('bla', 'C')).to.throw();
+      const scale = new Scale('bla', 'A');
+      expect(buildScale(scale)).to.throw();
     })
 
     it('should return a scale', () => {
+      const scale = new Scale('major', 'A');
       const aMajorScale = ['A', 'B', 'C#', 'D', 'E', 'F#', 'G#'];
-      expect(buildScale('MAJOR', 'A')).to.be.eql(aMajorScale);
+      expect(buildScale(scale)).to.be.eql(aMajorScale);
+    });
+  });
+
+  describe('Build ChordProgression Utils', () => {
+
+    it('should throw when scale not exists', () => {
+      const chordProgression = new ChordProgression('bla', 'A');
+      expect(buildProgression(chordProgression)).to.throw();
+    });
+
+    it('should return a progression', () => {
+      const chordProgression = new ChordProgression('major', 'A');
+      chordProgression.scale = ['A', 'B', 'C#', 'D', 'E', 'F#', 'G#'];
+      const aMajorProgression = ['A', 'Bm', 'C#m', 'D', 'E', 'F#m', 'G#°'];
+      expect(buildProgression(chordProgression)).to.be.eql(aMajorProgression);
     });
   });
 });

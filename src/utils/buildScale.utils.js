@@ -5,9 +5,9 @@ import {
 
 let scales = require('../data/scales.json');
 
-function buildScale(scaleName, tonic) {
-  const chromaticScale =  chromaticScaleFromTonic(tonic);
-  const scaleSpec = scales.filter(item => item.name === scaleName)[0];
+function buildScale(scale) {
+  const chromaticScale =  chromaticScaleFromTonic(scale.tonic);
+  const scaleSpec = scales.filter(item => item.name === scale.name)[0];
 
   if(!scaleSpec) throw new Error('Provide a valid scale');
 
